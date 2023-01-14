@@ -27,7 +27,7 @@ app.post('/api/notes', (req, res) => {
   }); 
 });
 
-//API/notes delete route
+//API/notes delete route deletes note with specific ID
 app.delete('/api/notes/:id', (req, res) => {
   fs.readFile('./db/db.json', 'utf8', (err, data) => {
     if (err) throw err;
@@ -39,9 +39,9 @@ app.delete('/api/notes/:id', (req, res) => {
 
   });
 });
-return console.log("Deleted note: "+req.params.id);
 });
 
+//Retreive note with specific ID
 app.get('api/notes/:id', (req, res) =>{
   res.json(notes[req.params.id]);
 });
