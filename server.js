@@ -7,26 +7,27 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-
-
 //Set up app to handle data parsing, serve static files in directory 'public', parse incoming JSON requests to put in req.body
 app.use(express.urlencoded({extended: true}));
 app.use(express.static('public'));
 app.use(express.json());
 
+//API/notes post route
 app.post('/api/notes', (req, res) => {
   fs.readFile('./db/db.json', 'utf8', (err, data) => {
     if (err) throw err;
     var notes = JSON.parse(data);
-    let userNote = req.body;
-    userNote.id = Math.floor(Math.random() * 5000);
-    notes.push(userNote);
+    let newNote = req.body;
+    newNote.id = Math.floor(Math.random() * 5000);
+    notes.push(newNote);
   fs.writeFile('./db/db.json', JSON.stringify(notes), (err, data) => {
-      res.json(userNote);
+      res.json(newNote);
+      return console.log("Added new note: " + newNote.title);
   });
   }); 
 });
 
+//API/notes delete route
 app.delete('/api/notes/:id', (req, res) => {
   fs.readFile('./db/db.json', 'utf8', (err, data) => {
     if (err) throw err;
@@ -35,8 +36,10 @@ app.delete('/api/notes/:id', (req, res) => {
   
   fs.writeFile('./db/db.json', JSON.stringify(newNotes), (err, data) => {
     res.json({msg: 'successfully'});
+
   });
 });
+return console.log("Deleted note: "+req.params.id);
 });
 
 app.get('api/notes/:id', (req, res) =>{
