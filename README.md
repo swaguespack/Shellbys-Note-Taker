@@ -12,7 +12,7 @@ The Shellbys-Note-Taker application is powered by Express.js and allows the user
 
 ## Installation
 
-To create your own note taker app, `git clone` the repo so you have the Node project on your local development environemnt.
+To create your own note taker app, `git clone` the repo so you have the project on your local development environemnt.
 
 Run `npm install` to install all dependencies. 
 
