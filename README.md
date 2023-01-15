@@ -8,7 +8,7 @@ The Shellbys-Note-Taker application is powered by Express.js and allows the user
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
-* [Screenshot Demo](#screenshot-demo)
+* [Application Mock Up ](#application-mock-up)
 
 ## Installation
 
@@ -19,9 +19,14 @@ Run `npm install` to install all dependencies.
 ## Usage
 To use the application locally, run `node server.js` in your CLI and open `http://localhost:3001` in your browser.
 
-Shellbys-Note-Taker app can be used on Heroku.
+Shellbys-Note-Taker app can be used on Heroku with the following link:
+https://shellbys-note-taker.herokuapp.com/ 
 
-## Screenshot Demo
+## Application Mock Up
 
-The following video demonstrates how Shellbys-Note-Taker is used
+The following images capture Shellby-Note-Taker application and functionality:
+
+![Shellbys-Note-Taker application landing page with a link to a notes page.](./public/assets/images/Note-Taker-Homepage.png)
+![Shellbys-Note-Taker application notes page shows note titles listed in left column and empty fields to enter new note and title.](./public/assets/images/Note-Taker-notesPage.png)
+
 
