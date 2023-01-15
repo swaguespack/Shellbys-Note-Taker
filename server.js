@@ -12,7 +12,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(express.static('public'));
 
-//Respond to POST request to add notes
+//API Route to respond to POST request to add notes
 app.post('/api/notes', (req, res) => {
   //Read db.json file
   fs.readFile('./db/db.json', 'utf8', (err, data) => {
@@ -35,7 +35,7 @@ app.post('/api/notes', (req, res) => {
   }); 
 });
 
-//Respond to DELETE request to delete note with specific ID
+//API Route to respond to DELETE request to delete note with specific ID
 app.delete('/api/notes/:id', (req, res) => {
   //Read db.json file
   fs.readFile('./db/db.json', 'utf8', (err, data) => {
@@ -79,7 +79,7 @@ app.get('/api/notes', (req, res) => {
 app.get('/notes', (req, res) => {
     res.sendFile('/public/notes.html',{root:__dirname});
 });
-//GET route for homepage
+//GET route for landing page
 app.get('*', (req, res) => {
    res.sendFile('/public/index.html',{root:__dirname});
 });
